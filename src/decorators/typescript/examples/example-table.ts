@@ -1,4 +1,5 @@
-import { table, field, schemas } from '../decorators/tc39.js';
+import { registry } from '../registry.js';
+import { table, field } from '../table.js';
 
 @table
 export class Example1 {
@@ -28,7 +29,7 @@ export default () => {
   // const e2 = new Example2();
   // const e3 = new Example3();
   // const e4 = new Example4();
-  console.log(e1);
+  for (const schema of registry) {
+    console.log(schema);
+  }
 };
-
-console.log(schemas);

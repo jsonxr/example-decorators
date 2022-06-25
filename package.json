@@ -5,9 +5,12 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "watch": "babel src --source-maps=inline --extensions '.ts' --out-dir dist --watch ",
-    "build": "babel src --source-maps=inline --extensions '.ts' --out-dir dist && chmod +x dist/cli.js",
-    "start": "chmod +x dist/cli.js && dist/cli.js"
+    "watch": "babel src --source-maps=inline --extensions '.ts' --out-dir dist --watch",
+    "build": "babel src --source-maps=inline --extensions '.ts' --out-dir dist",
+    "start:tc39": "chmod +x dist/cli-tc39.js && dist/cli-tc39.js",
+    "watch:ts": "babel src/cli-tc39.ts src/decorators/typescript --source-maps=inline --extensions '.ts' --out-dir dist --watch",
+    "build:ts": "babel src/cli-tc39.ts src/decorators/typescript --source-maps=inline --extensions '.ts' --out-dir dist",
+    "start:ts": "chmod +x dist/cli-ts.js && dist/cli-ts.js"
   },
   "bin": {
     "cli": "./dist/cli.js"

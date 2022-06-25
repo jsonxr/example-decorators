@@ -24,13 +24,13 @@ let FIELDS: Record<string | symbol, FieldMetadata> = {};
 
 const createFieldDecorator = (options?: FieldMetadata) => (_value: undefined, context: ClassFieldDecoratorContext) => {
   if (context.kind === 'field') {
-    const className: string | symbol = context.name;
+    const name: string | symbol = context.name;
     const field: FieldMetadata = {
       ...options,
-      name: className,
+      name,
       field: options?.field ?? String(context.name),
     };
-    FIELDS[className] = field;
+    FIELDS[name] = field;
   }
 };
 

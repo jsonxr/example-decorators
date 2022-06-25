@@ -1,4 +1,4 @@
-import { sealed, table, field } from './decorators/tc39.js';
+import { table, field } from '../../tc39.js';
 
 @table
 export class Church {

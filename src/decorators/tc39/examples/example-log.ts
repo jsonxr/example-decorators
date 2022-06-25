@@ -1,4 +1,4 @@
-import { log } from '../decorators/tc39.js';
+import { log } from '../../tc39.js';
 
 @log
 class Example {
